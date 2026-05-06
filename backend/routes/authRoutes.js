@@ -1,0 +1,18 @@
+const express = require("express")
+const router = express.Router()
+
+
+const { signup, login } = require("../controllers/authController")
+
+
+router.post("/signup", signup)
+router.post("/login", login)
+
+
+router.get("/", (req, res) => {
+  res.json({
+    message: "Auth routes working ✅"
+  })
+})
+
+module.exports = router
